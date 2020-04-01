@@ -1,7 +1,9 @@
 package Lab1;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 public class Lab1 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         double S = 0;
         int a = 1;
         int b = 2;
@@ -9,23 +11,29 @@ public class Lab1 {
         int m = 5;
         final int c = 0;
 
-        if(a <= c && c <= n || b <= 0 && 0 <= m){
-            System.out.println("Division by zero");
 
-        }else{
+        if (a > n || b > m) {
 
-            for(float i = (float)a; i<=n; i++){
-                for(float j = (float)b; j<=m; j++){
-                    S+=((double)(i/j)/i);
+            System.out.println("Invalid range");
+
+        } else {
+
+            if (a <= c && c <= n || b <= 0 && 0 <= m) {
+
+                System.out.println("Division by zero");
+
+            } else {
+
+                for (float i = a; i <= n; i++) {
+                    for (float j = b; j <= m; j++) {
+                        S += ((i / j) / (i - c));
+                    }
+
                 }
-
+                System.out.println(S);
             }
-            System.out.println(S);
+
         }
-
-
-
-
 
 
     }
