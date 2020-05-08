@@ -6,14 +6,13 @@ import java.util.regex.Pattern;
 public class string {
 
     private StringBuffer str;
-    private Pattern pattern;
 
     public string(String str){
         this.str = new StringBuffer(str);
     }
 
     public void replace(StringBuffer st2, int size){
-        pattern = Pattern.compile("\\b(\\w){"+size+"}\\b",'i');
+        Pattern pattern = Pattern.compile("\\b(\\w){" + size + "}\\b", 'i');
         Matcher matcher = pattern.matcher(str);
         System.out.println(matcher.replaceAll(st2.toString()));
 
