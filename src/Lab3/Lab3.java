@@ -1,13 +1,14 @@
 package Lab3;
 
 public class Lab3 {
-    public static void main(String[] args) {
+    public static void main(java.lang.String[] args) {
 
-        int size = 4;
-        StringBuffer sb = new StringBuffer("Java — обєктно-орієнтована мова програмування, випущена 1995 року компанією «Sun Microsystems» як основний компонент платформи Java");
-        StringBuffer sb2 = new StringBuffer("класс");
-        String str = new String(sb);
+            int size = 7;
+            StringBuffer rep = new StringBuffer("QQQQQQQ");
+            string str = new string("Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible.");
 
-        str.replace(sb2, 4);
+            str.replace(rep, size);
+
+
     }
 }
