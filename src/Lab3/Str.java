@@ -3,11 +3,11 @@ package Lab3;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class string {
+public class Str {
 
     private StringBuffer str;
 
-    public string(String str){
+    public Str(String str){
         this.str = new StringBuffer(str);
     }
 
