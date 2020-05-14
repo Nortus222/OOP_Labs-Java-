@@ -30,10 +30,10 @@ public class Lab4 {
 
         for (int i = 0; i < students.length; i++) {
             students[i] = new Student(names[i],
-                    tmp.nextInt((27-17)+1)+17,
-                    tmp.nextInt((6-1)+1)+1,
-                    tmp.nextInt((126-121)+1)+121,
-                    1f+tmp.nextFloat()*(100f-1f),
+                    tmp.nextInt((27 - 17) + 1) + 17,
+                    tmp.nextInt((6 - 1) + 1) + 1,
+                    tmp.nextInt((126 - 121) + 1) + 121,
+                    1f + tmp.nextFloat() * (100f - 1f),
                     "KPI");
             students[i].getInfo();
         }
@@ -57,7 +57,7 @@ public class Lab4 {
  */
 class SortByAge implements Comparator<Student> {
     @Override
-    public int compare(Student a, Student b){
+    public int compare(Student a, Student b) {
         return a.age - b.age;
     }
 }
@@ -65,9 +65,9 @@ class SortByAge implements Comparator<Student> {
 /**
  * Class for comparing a performance of two students
  */
-class SortByPerformance implements Comparator<Student>{
+class SortByPerformance implements Comparator<Student> {
     @Override
-    public int compare(Student a, Student b){
+    public int compare(Student a, Student b) {
         if (b.performance < a.performance)
             return -1;
         if (b.performance > a.performance)
