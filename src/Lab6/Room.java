@@ -31,10 +31,7 @@ public class Room {
     }
 
     public void sortByWeariness(){
-        List<RoomEquipment> wearList = new ArrayList();
-        for(RoomEquipment i: roomEquipments){
-            wearList.add(i);
-        }
+        List<RoomEquipment> wearList = Arrays.asList(roomEquipments);
         wearList.sort(Comparator.comparing(RoomEquipment::getWeariness));
         System.out.println(wearList);
     }
