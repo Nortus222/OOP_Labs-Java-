@@ -44,7 +44,7 @@ public class Lab4 {
             students[i].getInfo();
         }
 
-        Arrays.sort(students, new SortByPerformance());
+        Arrays.sort(students, new SortByPerformance().reversed());
         System.out.println("-------Sorted-------------------By Performance---------(Down)");
         for (int i = 0; i < students.length; i++) {
             students[i].getInfo();
@@ -58,7 +58,7 @@ public class Lab4 {
 class SortByAge implements Comparator<Student> {
     @Override
     public int compare(Student a, Student b) {
-        return a.age - b.age;
+        return a.getAge() - b.getAge();
     }
 }
 
@@ -68,9 +68,9 @@ class SortByAge implements Comparator<Student> {
 class SortByPerformance implements Comparator<Student> {
     @Override
     public int compare(Student a, Student b) {
-        if (b.performance < a.performance)
+        if (b.getPerformance() > a.getPerformance())
             return -1;
-        if (b.performance > a.performance)
+        if (b.getPerformance() < a.getPerformance())
             return 1;
         return 0;
     }

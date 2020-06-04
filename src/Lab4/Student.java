@@ -18,8 +18,8 @@ import java.util.Comparator;
  * Class that stores all student information and methods
  */
 public class Student {
-    public float performance; /*Student's level of performance (0-100%)*/
-    public int age; /* Student's age */
+    private float performance; /*Student's level of performance (0-100%)*/
+    private int age; /* Student's age */
     private String name; /* Student's name */
     private int course; /* Student's course (1-6)*/
     private int spec; /* Student's speciality code*/
@@ -33,6 +33,14 @@ public class Student {
         this.spec = speciality;
         this.performance = performance;
         this.univ = university;
+    }
+
+    public float getPerformance(){
+        return performance;
+    }
+
+    public int getAge(){
+        return age;
     }
 
     public void transferUniv(String newUniversity){
