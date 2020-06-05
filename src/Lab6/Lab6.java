@@ -7,7 +7,7 @@ public class Lab6 {
         Toy toy2 = new Doll(200,85, true);
         Toy toy3 = new Lego(500,50.9f,2016);
 
-        Furniture fur1 = new Table(800,100,75);
+        Furniture fur1 = new Table(800,80,75);
         Furniture fur2 = new Carpet(1200, 60,200);
 
         Room room = new Room(new RoomEquipment[]{toy1,toy2,toy3,fur1,fur2});
