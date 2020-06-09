@@ -2,7 +2,6 @@ package Lab5;
 
 public class Sentence extends Element {
 
-    private Word[] clSentence;
     private Element[] sentence;
 
     public Sentence(Element ... s){
