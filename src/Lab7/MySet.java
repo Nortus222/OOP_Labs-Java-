@@ -2,10 +2,9 @@ package Lab7;
 
 import Lab6.Toy;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Set;
+import java.io.UncheckedIOException;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class MySet implements Set<Toy> {
     private Node head;
@@ -80,7 +79,32 @@ public class MySet implements Set<Toy> {
 
     @Override
     public <T> T[] toArray(T[] a) {
-        return null;//todo check
+        if (a == null){
+            throw new NullPointerException();
+        }
+
+        if (!a.getClass().getComponentType().isAssignableFrom(head.getToy().getClass())){
+            throw new ArrayStoreException();
+        }
+
+        if (a.length >= size){
+            int count = 0;
+            for (Toy toy: this) {
+                a[count] = (T) toy;
+                count++;
+            }
+        }else{
+            a = (T[])Array.newInstance(a.getClass().getComponentType(),size);
+            System.out.println(a.getClass().getSimpleName());
+            int count = 0;
+            for (Toy toy: this) {
+                a[count] = (T) toy;
+                count++;
+            }
+
+        }
+
+        return a;
     }
 
     @Override

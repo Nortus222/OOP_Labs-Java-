@@ -1,5 +1,6 @@
 package Lab7;
 
+import Lab6.RoomEquipment;
 import Lab6.Toy;
 
 import java.util.ArrayList;
@@ -61,6 +62,16 @@ public class Lab7 {
 
         Object[] arr = set1.toArray();
         System.out.println(arr);
+        for (Object obj: arr) {
+            System.out.println(obj);
+        }
+        System.out.println("------------------------");
+        RoomEquipment[] arr2 = set1.toArray(new RoomEquipment[10]);
+
+        for (RoomEquipment rme: arr2) {
+            System.out.println(rme);
+        }
+
 
 
         System.out.println("done");
