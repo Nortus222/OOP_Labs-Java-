@@ -1,11 +1,25 @@
+/*
+
+MySet.java
+
+MySet class
+
+Created by Ihor Sherstiuk on 06/05/20.
+
+Copyright © 2020 Ihor Sherstiuk. All rights reserved.
+
+ */
 package Lab7;
 
 import Lab6.Toy;
 
-import java.io.UncheckedIOException;
+
 import java.lang.reflect.Array;
 import java.util.*;
 
+/**
+ * Class that creates MySet and implements Set
+ */
 public class MySet implements Set<Toy> {
     private Node head;
     private Node tail;

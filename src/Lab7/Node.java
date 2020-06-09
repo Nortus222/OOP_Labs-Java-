@@ -1,9 +1,21 @@
+/*
+
+Node.java
+
+Node class
+
+Created by Ihor Sherstiuk on 06/05/20.
+
+Copyright © 2020 Ihor Sherstiuk. All rights reserved.
+
+ */
 package Lab7;
 
 import Lab6.Toy;
 
-import java.util.Objects;
-
+/**
+ * Class that makes realisation like linked list
+ */
 public class Node {
     private Toy toy;
     private Node next;

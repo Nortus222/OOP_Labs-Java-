@@ -1,3 +1,14 @@
+/*
+
+Lab7.java
+
+Main class
+
+Created by Ihor Sherstiuk on 06/05/20.
+
+Copyright © 2020 Ihor Sherstiuk. All rights reserved.
+
+ */
 package Lab7;
 
 import Lab6.RoomEquipment;
@@ -6,6 +17,9 @@ import Lab6.Toy;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Class that creates a sets and performs operations
+ */
 public class Lab7 {
     public static void main(String[] args) {
         MySet set1 = new MySet(new Toy(0,0));
