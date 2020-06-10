@@ -70,7 +70,7 @@ public class MySet implements Set<Toy> {
             @Override
             public Toy next() {
                 if(!hasNext()){
-                    throw new NoSuchElementException();
+                    throw new NullPointerException();
                 } else {
                     Toy toy = curNode.getToy();
                     curNode = curNode.getNext();
@@ -101,7 +101,7 @@ public class MySet implements Set<Toy> {
             throw new ArrayStoreException();
         }
 
-        if (a.length >= size){
+        if (a.length == size){
             int count = 0;
             for (Toy toy: this) {
                 a[count] = (T) toy;
@@ -109,7 +109,6 @@ public class MySet implements Set<Toy> {
             }
         }else{
             a = (T[])Array.newInstance(a.getClass().getComponentType(),size);
-            System.out.println(a.getClass().getSimpleName());
             int count = 0;
             for (Toy toy: this) {
                 a[count] = (T) toy;
@@ -117,12 +116,12 @@ public class MySet implements Set<Toy> {
             }
 
         }
-
         return a;
     }
 
     @Override
     public boolean add(Toy toy) {
+        if (toy == null) throw new NullPointerException();
         Node node = new Node(toy,null);
         if (head == null){
             head = node;
@@ -140,12 +139,16 @@ public class MySet implements Set<Toy> {
 
     @Override
     public boolean remove(Object o) {
-        if (o == null || head.getToy().getClass() != o.getClass()) return false;
+        if (o == null){
+            throw  new NullPointerException();
+        }
+        if (head.getToy().getClass() != o.getClass()){
+            throw new ClassCastException();
+        }
         Toy toy = (Toy) o;
         if(!contains(toy)) return false;
         Node curNode = head;
         for(int i=0;i<size;i++){
-            System.out.println(curNode.getToy());
             if(i==0 && curNode.getToy().equals(toy)){
                 head = curNode.getNext();
                 curNode.setNext(null);
@@ -176,6 +179,9 @@ public class MySet implements Set<Toy> {
 
     @Override
     public boolean addAll(Collection<? extends Toy> c) {
+        if (c == null){
+            throw new NullPointerException();
+        }
         boolean isCollectionChanged = false;
         for (Toy toy : c) {
             isCollectionChanged |= add(toy);

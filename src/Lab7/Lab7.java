@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Class that creates a sets and performs operations
+ * Class that creates sets and performs operations
  */
 public class Lab7 {
     public static void main(String[] args) {
