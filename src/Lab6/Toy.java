@@ -22,12 +22,15 @@ public class Toy extends RoomEquipment {
                 + getWeariness() + "\n";
     }
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null){
+            throw new NullPointerException();
+        }
+        if (getClass() != o.getClass()){
+            throw new ClassCastException();
+        }
         Toy toy = (Toy) o;
         return Float.compare(toy.weariness, weariness) == 0 && toy.getPrice() == this.getPrice();
     }
