@@ -69,13 +69,9 @@ public class MySet implements Set<Toy> {
 
             @Override
             public Toy next() {
-                if(!hasNext()){
-                    throw new NullPointerException();
-                } else {
-                    Toy toy = curNode.getToy();
-                    curNode = curNode.getNext();
-                    return toy;
-                }
+                Toy toy = curNode.getToy();
+                curNode = curNode.getNext();
+                return toy;
             }
         };
     }
